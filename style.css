@@ -24,3 +24,27 @@ nav {
 .quizcard {
     width: 30rem;
 }
+
+.answer-button:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.bg-success, .bg-danger {
+    color: white !important;
+}
+
+/* #quiz-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.result {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
