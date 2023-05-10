@@ -64,13 +64,18 @@ function showQuestion(){
     progressBar();
 }
 function endScreen() {
-    document.getElementById('quiz-content').innerHTML = `
+    document.getElementById('final-content').innerHTML = `
     <h2 class="d-flex justify-content-center">Geschafft!</h2>
     <div class="result">
         <p>Du hast <b>${rightAnswers} von ${questions.length}</b> Fragen richtig beantwortet.</p>
     </div>
+    <div class="restart">
+    <button type="button" class="btn btn-primary" onclick="restart()">Erneut spielen!</button>
+    </div>
     `;
     document.getElementById('header-img').src = "./img/success.jpg";
+    document.getElementById('final-content').classList.remove('d-none');
+    document.getElementById('quiz-content').classList.add('d-none');
 }
 
 function progressBar(){
@@ -111,4 +116,14 @@ function resetQuestions() {
         document.getElementById(`answer_${i}`).parentNode.classList.remove('bg-danger');
     }
     document.getElementById('current-question').innerHTML = currentQuestion+1;
+}
+
+function restart() {
+    currentQuestion = 0;
+    rightAnswers = 0;
+    document.getElementById('header-img').src = "./img/bg-card.jpg";
+    document.getElementById('final-content').classList.add('d-none');
+    document.getElementById('quiz-content').classList.remove('d-none');
+    showQuestion();
+    resetQuestions();
 }

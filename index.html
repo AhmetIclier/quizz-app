@@ -33,36 +33,39 @@
                 <div class="progress">
                     <div class="progress-bar" id="proBar" role="progressbar" style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                 </div>
-                <div class="card-body" id="quiz-content">
-                    <h5 class="card-title" id="question-text">Card title</h5>
+                <div class="card-body">
+                    <div id="final-content" class="d-none"></div>
+                    <div id="quiz-content">
+                        <h5 class="card-title" id="question-text">Card title</h5>
 
-                    <div class="card answer-button mb-2" onclick="logAnswer('answer_1')">
-                        <div class="card-body" id="answer_1">
-                            Antwort 1
+                        <div class="card answer-button mb-2" onclick="logAnswer('answer_1')">
+                            <div class="card-body" id="answer_1">
+                                Antwort 1
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card answer-button mb-2" onclick="logAnswer('answer_2')">
-                        <div class="card-body" id="answer_2">
-                            Antwort 2
+                        <div class="card answer-button mb-2" onclick="logAnswer('answer_2')">
+                            <div class="card-body" id="answer_2">
+                                Antwort 2
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card answer-button mb-2" onclick="logAnswer('answer_3')">
-                        <div class="card-body" id="answer_3">
-                            Antwort 3
+                        <div class="card answer-button mb-2" onclick="logAnswer('answer_3')">
+                            <div class="card-body" id="answer_3">
+                                Antwort 3
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card answer-button" onclick="logAnswer('answer_4')">
-                        <div class="card-body" id="answer_4">
-                            Antwort 4
+                        <div class="card answer-button" onclick="logAnswer('answer_4')">
+                            <div class="card-body" id="answer_4">
+                                Antwort 4
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="question-footer mt-2">
-                        <div><b id="current-question">1</b> von <b id="question-amount"></b> Fragen</div>
-                        <button type="button" id="next-btn" class="btn btn-primary" disabled onclick="nextQuestion()">Nächste Frage</button>
+                        <div class="question-footer mt-2">
+                            <div><b id="current-question">1</b> von <b id="question-amount"></b> Fragen</div>
+                            <button type="button" id="next-btn" class="btn btn-primary" disabled onclick="nextQuestion()">Nächste Frage</button>
+                        </div>
                     </div>
                 </div>
             </div>
