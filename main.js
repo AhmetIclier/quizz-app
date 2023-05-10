@@ -52,22 +52,32 @@ function init() {
 }
 
 function showQuestion(){
-
-
     let question = questions[currentQuestion];
     if (currentQuestion == questions.length) {
-        document.getElementById('quiz-content').innerHTML = `
-            <h2 class="d-flex justify-content-center">Geschafft!</h2>
-            <div class="result">
-                <p>Du hast ${rightAnswers} von ${questions.length} Fragen richtig beantwortet.</p>
-            </div>
-        `;
+        endScreen();
     } else {
         document.getElementById('question-text').innerHTML = question['question'];
         for (let i = 1; i<=4; i++) {
         document.getElementById(`answer_${i}`).innerHTML = question[`answer${i}`];
         }
     }    
+    progressBar();
+}
+function endScreen() {
+    document.getElementById('quiz-content').innerHTML = `
+    <h2 class="d-flex justify-content-center">Geschafft!</h2>
+    <div class="result">
+        <p>Du hast <b>${rightAnswers} von ${questions.length}</b> Fragen richtig beantwortet.</p>
+    </div>
+    `;
+    document.getElementById('header-img').src = "./img/success.jpg";
+}
+
+function progressBar(){
+    let percent = Math.round(currentQuestion/questions.length*100);
+    console.log(percent);
+    document.getElementById('proBar').style = `width: ${percent}%`;
+    document.getElementById('proBar').innerHTML = `${percent}%`;
 }
 
 function logAnswer(answer) {

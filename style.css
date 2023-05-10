@@ -48,3 +48,8 @@ nav {
     font-size: 1.4rem;
 }
 
+#header-img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
