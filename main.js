@@ -46,6 +46,9 @@ let questions = [
 let currentQuestion = 0;
 let rightAnswers = 0;
 
+let successAudio = new Audio ('./audio/success.mp3');
+let failAudio = new Audio ('./audio/fart.mp3');
+
 function init() {
     document.getElementById('question-amount').innerHTML = questions.length;
     showQuestion();
@@ -92,9 +95,11 @@ function logAnswer(answer) {
     if(selectedQuestionID == question['right_answer']) {
         document.getElementById(answer).parentNode.classList.add('bg-success');
         rightAnswers++;
+        successAudio.play();
     }else {
         document.getElementById(answer).parentNode.classList.add('bg-danger');
         document.getElementById(`answer_${idOfRightAnswer}`).parentNode.classList.add('bg-success');
+        failAudio.play();
     }
     enableButton()
 }
